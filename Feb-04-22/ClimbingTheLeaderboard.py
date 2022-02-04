@@ -18,4 +18,5 @@ if __name__ == '__main__':
     noOfGames = int(input())
     playerScores = list(map(int,input().split()))
     rankings = climbingLeaderboard(ranked,playerScores)
-    print(rankings)
+    for rank in rankings:
+        print(rank)
