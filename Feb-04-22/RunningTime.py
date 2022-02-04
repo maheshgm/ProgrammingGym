@@ -21,3 +21,5 @@ if __name__ == '__main__':
 
 	noOfSwaps = InsertionSort(arrayOfNumbers, sizeOfArray)
 	print(noOfSwaps)
+
+	
