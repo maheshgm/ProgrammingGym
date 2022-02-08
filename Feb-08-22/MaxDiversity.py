@@ -20,7 +20,6 @@ for test in range(testCases):
 	while len(duplicates)>0 and maxOps>0:
 		
 		ele = duplicates[-1]
-		
 		del duplicates[-1]
 		if ele > 1:
 			maxOps -= 1
@@ -29,4 +28,5 @@ for test in range(testCases):
 		if(ele > 1):
 			duplicates.append(ele)
 			duplicates.sort()
+			
 	print(maxDiversity)
