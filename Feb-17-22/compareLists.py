@@ -1,9 +1,6 @@
 #!/bin/python3
-# Program Link : https://www.hackerrank.com/challenges/reverse-a-linked-list/problem?isFullScreen=true
-import math
+
 import os
-import random
-import re
 import sys
 
 class SinglyLinkedListNode:
@@ -36,6 +33,9 @@ def print_singly_linked_list(node, sep, fptr):
         if node:
             fptr.write(sep)
 
+# Complete the compare_lists function below.
+
+#
 # For your reference:
 #
 # SinglyLinkedListNode:
@@ -43,35 +43,42 @@ def print_singly_linked_list(node, sep, fptr):
 #     SinglyLinkedListNode next
 #
 #
+def compare_lists(llist1, llist2):
+    while llist1 != None and llist2.next != None:
+        print(llist1.data, llist2.data)
+        if llist1.data != llist2.data:
+            return 0
+        llist1 = llist1.next
+        llist2 = llist2.next
 
-def reverse(llist):
-    # Write your code here
-    prev = None
-    current = llist
-    nextNode = None
-    while current != None:
-        nextNode = current.next
-        current.next = prev
-        prev = current 
-        current = nextNode
-    return prev
+    if llist1.next == None and llist2.next == None:
+        return 1
+    else:
+        return 0
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
     tests = int(input())
 
     for tests_itr in range(tests):
-        llist_count = int(input())
+        llist1_count = int(input())
 
-        llist = SinglyLinkedList()
+        llist1 = SinglyLinkedList()
 
-        for _ in range(llist_count):
-            llist_item = int(input())
-            llist.insert_node(llist_item)
+        for _ in range(llist1_count):
+            llist1_item = int(input())
+            llist1.insert_node(llist1_item)
+            
+        llist2_count = int(input())
 
-        llist1 = reverse(llist.head)
+        llist2 = SinglyLinkedList()
 
-        print_singly_linked_list(llist1, ' ', fptr)
-        fptr.write('\n')
+        for _ in range(llist2_count):
+            llist2_item = int(input())
+            llist2.insert_node(llist2_item)
+
+        result = compare_lists(llist1.head, llist2.head)
+
+        fptr.write(str(int(result)) + '\n')
 
     fptr.close()
