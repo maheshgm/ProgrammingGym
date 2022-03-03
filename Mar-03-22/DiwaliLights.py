@@ -4,10 +4,11 @@ MAX_LIMIT = 100000
 def exponentialPower(base, exponent):
     if exponent == 0:
         return 1
+    midResult = (exponentialPower(base, exponent//2) ** 2) % MAX_LIMIT
     if exponent % 2 == 0:
-        return (exponentialPower(base, exponent//2) ** 2) % MAX_LIMIT
+        return midResult
     else:
-        return (exponentialPower(base, exponent//2) * base ) % MAX_LIMIT
+        return (midResult * base) % MAX_LIMIT
 
 def findPatterns(bulbSet):
     patterns = exponentialPower(2, bulbSet)
