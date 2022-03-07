@@ -11,9 +11,7 @@ def DFSUtil(node, visited, graph, edges):
             if visited[child] == 0:
                 edges[child] = edges[node] + 1
                 stack.append(child)
-
-
-
+                
 if __name__ == '__main__':
     N = int(input())
     graph = [[] for i in range(N + 1)]
