@@ -12,7 +12,6 @@ class EmptyArraysTest(unittest.TestCase):
         A = [1,3,2]
         B = [2,3,1]
         self.assertEqual(6, EmptyArrays.solve(A,B))
-
     def test2(self):
         A = [4,2,3,6,1,5]
         B = [5,2,3,1,6,4]
