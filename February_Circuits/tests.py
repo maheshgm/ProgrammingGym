@@ -7,6 +7,7 @@ class XORSumTest(unittest.TestCase):
         self.assertEqual(0,XORSum.solve(0))
     def test2(self):
         self.assertEqual(1, XORSum.solve(5))
+
 class EmptyArraysTest(unittest.TestCase):
     def test1(self):
         A = [1,3,2]
