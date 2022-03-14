@@ -2,6 +2,7 @@ import unittest
 import XORSum
 import EmptyArrays
 import LongestCommonSubSeq
+import CricketTournament
 
 
 class XORSumTest(unittest.TestCase):
@@ -38,6 +39,22 @@ class LongestCommonSubSeqTest(unittest.TestCase):
         B = [9, 8, 6, 7, 8, 6]
         indices = LongestCommonSubSeq.solve(A, N, B, M)
         self.assertEqual(0, indices)
+
+
+class CricketTournamentTest(unittest.TestCase):
+    def test1(self):
+        bob = [1, 2, 3, 4, 5]
+        james = [3, 2, 4, 1, 5]
+        max_score = CricketTournament.solve(bob, james)
+
+        self.assertEqual(6, max_score)
+
+    def test2(self):
+        bob = [8, 2, 7, 3, 1, 5, 9, 3]
+        james = [10, 4, 7, 8, 2, 8, 9, 11, 14]
+        max_score = CricketTournament.solve(bob, james)
+
+        self.assertEqual(11, max_score)
 
 if __name__ == '__main__':
     unittest.main()
