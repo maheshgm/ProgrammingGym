@@ -3,7 +3,7 @@ import XORSum
 import EmptyArrays
 import LongestCommonSubSeq
 import CricketTournament
-
+import CementedStrings
 
 class XORSumTest(unittest.TestCase):
     def test1(self):
@@ -55,6 +55,17 @@ class CricketTournamentTest(unittest.TestCase):
         max_score = CricketTournament.solve(bob, james)
 
         self.assertEqual(11, max_score)
+
+class CementedStringsTests(unittest.TestCase):
+    def test1(self):
+        cemented_str = 'badce'
+        result = 7
+        self.assertEqual(result, CementedStrings.solve(cemented_str))
+
+    def test2(self):
+        cemented_str = 'aasccccksdlwdnamaxnsjekfshcj'
+        result = 168
+        self.assertEqual(result, CementedStrings.solve(cemented_str))
 
 if __name__ == '__main__':
     unittest.main()
