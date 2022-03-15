@@ -4,6 +4,7 @@ import EmptyArrays
 import LongestCommonSubSeq
 import CricketTournament
 import CementedStrings
+import TwoGoldMines
 
 class XORSumTest(unittest.TestCase):
     def test1(self):
@@ -66,6 +67,19 @@ class CementedStringsTests(unittest.TestCase):
         cemented_str = 'aasccccksdlwdnamaxnsjekfshcj'
         result = 168
         self.assertEqual(result, CementedStrings.solve(cemented_str))
+
+class TwoGoldMinesTests(unittest.TestCase):
+    def test1(self):
+        grid = ['.^.*', '.^..', '*...', '....']
+        size = 4
+        min_time = 2
+        self.assertEqual(min_time, TwoGoldMines.solve(grid, size))
+
+    def test2(self):
+        grid = ['....*..', '.......', '....#..', '*...#.^', '.......', '.......', '..#^...']
+        size = 7
+        min_time = 6
+        self.assertEqual(min_time, TwoGoldMines.solve(grid, size))
 
 if __name__ == '__main__':
     unittest.main()
